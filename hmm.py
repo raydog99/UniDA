@@ -35,4 +35,17 @@ class HiddenMarkovModel:
 	def train():
 		pass
 
-	
+	def predict(self, X, x_next, Z_seq=np.array([]), istrain=True):
+        if self.trained == False or istrain == False:
+            self.train(X)
+
+        X_length = len(X)
+        if Z_seq.any():
+            Z = np.zeros((X_length, self.n_state))
+            for i in range(X_length):
+                Z[i][int(Z_seq[i])] = 1
+        else:
+            Z = np.ones((X_length, self.n_state))
+        alpha, _ = self.forward(X, Z)  # P(x,z)
+        prob_x_next = self.emit_prob(np.array([x_next]))*np.dot(alpha[X_length - 1],self.transmat_prob)
+        return prob_x_next
