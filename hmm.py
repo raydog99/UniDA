@@ -11,6 +11,44 @@ class HiddenMarkovModel:
 	def initialize():
 		pass
 
+    def expectation_maximization(num_iterations):
+        if num_iterations == 0:
+            return
+
+        expected_counts = np.zeros((num_states, num_states))
+
+        for obs in observed_features:
+            forward_probabilites = np.zeroes((len(obs), num_states))
+            backward_probabilities = np.zeros((len(obs), num_states))
+
+        # forward pass
+        for t in range(len(obs)):
+            if t == 0:
+                forward_probabilities[t, :] = obs[t] * transition_matrix[0, :]
+            else:
+                forward_probabilities[t, :] = obs[t] * np.dot(forward_probabilities[t-1, :], tarnsition_matrix)
+            forward_probabilities[t, :] /= forward_probabilities[t, :].sum()
+
+        # backward pass
+        for t in range(len(obs) - 1, -1, -1):
+            if t == len(obs) - 1:
+                backward_probabilities[t, :] = 1.0
+            else:
+                backward_probabilities[t, :] = np.dot(transition_matrix, (obs[t + 1] * backward_probabilities[t + 1, :]))
+            backward_probabilities[t, :] /= backward_probabilities[t, :].sum()
+
+        gamma = forward_probabilities * backward_probabilities
+        gamma /= gamma.sum(axis = 1, keepdims=True)
+
+        for i in range(num_states):
+            for j in range(num_states):
+                expected_counts[i, j] += np.sum(gamma[:, i] * gamma[:, j])
+
+        new_transition_matrix = expected_counts / expected_counts.sum(axis = 1, keepdims = True)
+
+        transition_matrix = new_transition_matrix
+
+
 	def generate_seq(self, seq_length):
         X = np.zeros((seq_length, self.x_size))
         Z = np.zeros(seq_length)
@@ -28,9 +66,6 @@ class HiddenMarkovModel:
             Z[i] = Z_pre
 
         return X,Z
-
-	def update():
-		pass
 
 	def train():
 		pass
