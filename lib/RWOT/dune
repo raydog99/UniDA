@@ -1,0 +1,4 @@
+(library
+ (name rwot)
+ (libraries torch)
+ (modules (:standard)))
