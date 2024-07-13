@@ -1,0 +1,3 @@
+(executable
+ (name wdgrl)
+ (libraries torch))
