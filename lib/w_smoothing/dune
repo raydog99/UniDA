@@ -1,0 +1,4 @@
+(library
+ (name w_smoothing)
+ (libraries torch)
+ (modules :standard))
