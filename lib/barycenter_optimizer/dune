@@ -1,0 +1,4 @@
+(library
+ (name barycenter_optimizer)
+ (public_name barycenter_optimizer)
+ (libraries torch))
