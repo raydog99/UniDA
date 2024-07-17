@@ -1,0 +1,5 @@
+(library
+ (name dwb)
+ (public_name dwb)
+ (modules :standard)
+ (libraries torch))
