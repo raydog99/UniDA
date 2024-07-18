@@ -1,0 +1,4 @@
+(library
+ (name pswb)
+ (libraries torch)
+ (modules :standard))
