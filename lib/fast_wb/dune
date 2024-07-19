@@ -1,0 +1,4 @@
+(library
+ (name fast_wb)
+ (libraries torch)
+ (modules :standard))
