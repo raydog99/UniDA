@@ -1,0 +1,4 @@
+(library
+ (name gsw)
+ (libraries torch)
+ (modules :standard))
