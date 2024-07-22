@@ -1,0 +1,4 @@
+(library
+ (name ssot)
+ (libraries torch)
+ (modules :standard))
