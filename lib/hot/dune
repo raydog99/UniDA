@@ -1,0 +1,5 @@
+(library
+ (name hot)
+ (libraries torch lwt logs)
+ (modules :standard)
+)
