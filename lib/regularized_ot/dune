@@ -1,0 +1,5 @@
+(library
+ (name regularized_ot)
+ (libraries torch)
+ (modules :standard)
+)
