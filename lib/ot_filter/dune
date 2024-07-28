@@ -1,0 +1,5 @@
+(library
+ (name ot_filter)
+ (libraries torch)
+ (modules :standard)
+)
