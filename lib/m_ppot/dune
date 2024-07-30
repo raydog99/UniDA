@@ -1,0 +1,5 @@
+(library
+ (name m_ppot)
+ (libraries torch)
+ (modules :standard)
+)
