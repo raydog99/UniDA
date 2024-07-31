@@ -1,0 +1,5 @@
+(library
+ (name SaR)
+ (libraries torch)
+ (modules :standard)
+)
