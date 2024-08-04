@@ -1,0 +1,4 @@
+(library
+ (name jdot)
+ (libraries torch yojson csv)
+ (modules :standard))
