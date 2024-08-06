@@ -1,0 +1,5 @@
+(library
+ (name re_ot)
+ (libraries torch)
+ (modules :standard)
+)
