@@ -1,0 +1,4 @@
+(library
+ (name scsd)
+ (modules :standard)
+ (libraries torch))
