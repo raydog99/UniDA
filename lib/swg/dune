@@ -1,0 +1,4 @@
+(library
+ (name swg)
+ (modules :standard)
+ (libraries torch))
