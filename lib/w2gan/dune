@@ -1,0 +1,4 @@
+(library
+ (name w2gan)
+ (libraries torch)
+ (modules :standard))
