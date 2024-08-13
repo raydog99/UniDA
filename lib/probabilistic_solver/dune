@@ -1,0 +1,4 @@
+(library
+ (name probabilistic_solver)
+ (modules :standard)
+ (libraries torch))
