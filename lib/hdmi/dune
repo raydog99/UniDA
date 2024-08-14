@@ -1,0 +1,4 @@
+(library
+ (name hdmi)
+ (libraries torch)
+ (modules :standard))
